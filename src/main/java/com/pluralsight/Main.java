@@ -30,12 +30,13 @@ public class Main {
 
         Employee employee = new Employee(67, "Michael Trevino",
                 "Reception", 24, 0);
-        // 1 day of clocking in/out
-        employee.punchIn(8);
-        employee.punchOut(20); // 12 hours worked
-        // Day 2
-        employee.punchIn(8);
-        employee.punchOut(20); // 2nd 12 hours of work
+        // Day 1
+        employee.punchTimeCard(8);
+        employee.punchTimeCard(20); // 12 hours
+
+        //Day 2
+        employee.punchTimeCard(8);
+        employee.punchTimeCard(20); // 12 hours
 
         System.out.println("\n=== Employee ===");
         System.out.println("Employee Id: " + employee.getEmployeeId());
