@@ -9,6 +9,7 @@ public class Employee {
 
     // Employee Clock in time
     private int startTime;
+    private boolean punchedIn;
 
     public Employee(int employeeId, String name, String department,
                     double payRate, double hoursWorked) {
@@ -48,11 +49,21 @@ public class Employee {
     public double getTotalPay() {
         return (getRegularHours() * payRate) + (getOvertimeHours() * payRate * 1.5); // Overtime pays out at 1.5*
     }
-    public void punchIn(int time) {
-        startTime = time;
+    // Bonus for punching time card
+    public void punchTimeCard(int time) {
+        if (!punchedIn) {
+            // clocking in
+            startTime = time;
+            punchedIn = true;
+        }
+        else {
+            // Clocks out
+            int hoursWorkedThisShift = time - startTime;
+
+            // Adds shift hours to total hours worked
+            hoursWorked += hoursWorkedThisShift;
+            punchedIn = false;
+        }
     }
-    public void punchOut(int time) {
-        int hoursWorkedThisShift = time - startTime;
-        hoursWorked += hoursWorkedThisShift;
-    }
+
 }
