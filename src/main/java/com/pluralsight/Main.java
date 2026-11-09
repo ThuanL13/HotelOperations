@@ -29,7 +29,10 @@ public class Main {
         // Employees testing
 
         Employee employee = new Employee(67, "Michael Trevino",
-                "Reception", 24, 45);
+                "Reception", 24, 0);
+        // 1 day of clocking in/out
+        employee.punchIn(8);
+        employee.punchOut(20); // 12 hours worked
 
         System.out.println("\n=== Employee ===");
         System.out.println("Employee Id: " + employee.getEmployeeId());
