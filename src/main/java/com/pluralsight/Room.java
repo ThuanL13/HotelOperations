@@ -36,4 +36,17 @@ public class Room {
     public boolean isAvailable() {
         return !occupied && !dirty;
     }
+    public void checkIn() {
+        if (isAvailable()) { // If room is available and guests check in, room becomes occupied and will be dirty
+            occupied = true;
+            dirty = true;
+        }
+    }
+    public void checkOut() {
+        occupied = false;
+    }
+    public void cleanRoom() {
+        dirty = false;
+    }
+
 }
