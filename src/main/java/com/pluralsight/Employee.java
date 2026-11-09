@@ -6,4 +6,43 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+
+    public Employee(int employeeId, String name, String department,
+                    double payRate, double hoursWorked) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.department = department;
+        this.payRate = payRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public double getPayRate() {
+        return payRate;
+    }
+
+    public double getHoursWorked() {
+        return hoursWorked;
+    }
+    // Derived getters
+    public double getRegularHours() {
+        return Math.min(hoursWorked, 40); // Regular hours is 40(max)
+    }
+    public double getOvertimeHours() {
+        return Math.max(hoursWorked - 40, 0);
+    }
+    public double getTotalPay() {
+        return (getRegularHours() * payRate) + (getOvertimeHours() * payRate * 1.5); // Overtime pays out at 1.5*
+    }
 }
