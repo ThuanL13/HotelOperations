@@ -34,4 +34,21 @@ public class Reservation {
     public void setNumberOfNights(int numberOfNights) {
         this.numberOfNights = numberOfNights;
     }
+    // Derived getter for price
+    public double getPrice() {
+        double price;
+        if (roomType.equalsIgnoreCase("King")) {
+            price = 139.00;
+        }else {
+            price = 124.00;
+        }
+        if (weekend) {
+            price *= 1.10; // 100% of original price + 10% increase
+        }
+        return price;
+    }
+    // Derived getter for total reservation cost
+    public double getReservationTotal() {
+        return getPrice() * numberOfNights;
+    }
 }
