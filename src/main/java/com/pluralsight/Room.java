@@ -14,6 +14,26 @@ public class Room {
         this.price = price;
         this.occupied = occupied;
         this.dirty = dirty;
+
     }
 
+    public int getNumberOfBeds() {
+        return numberOfBeds;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public boolean isOccupied() {
+        return occupied;
+    }
+
+    public boolean isDirty() {
+        return dirty;
+    }
+    // Derived getter (using occupied and dirty)
+    public boolean isAvailable() {
+        return !occupied && !dirty;
+    }
 }
