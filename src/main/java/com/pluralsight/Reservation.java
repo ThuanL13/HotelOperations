@@ -37,7 +37,7 @@ public class Reservation {
     // Derived getter for price
     public double getPrice() {
         double price;
-        if (roomType.equalsIgnoreCase("King")) {
+        if (roomType.equalsIgnoreCase("king")) {
             price = 139.00;
         }else {
             price = 124.00;
