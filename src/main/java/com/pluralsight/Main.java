@@ -31,12 +31,14 @@ public class Main {
         Employee employee = new Employee(67, "Michael Trevino",
                 "Reception", 24, 0);
         // Day 1
-        employee.punchTimeCard(8);
-        employee.punchTimeCard(20); // 12 hours
+//        employee.punchTimeCard(8);
+//        employee.punchTimeCard(20); // 12 hours
 
         //Day 2
-        employee.punchTimeCard(8);
-        employee.punchTimeCard(20); // 12 hours
+//        employee.punchTimeCard(8);
+//        employee.punchTimeCard(20); // 12 hours
+
+
 
         System.out.println("\n=== Employee ===");
         System.out.println("Employee Id: " + employee.getEmployeeId());
