@@ -14,6 +14,12 @@ public class Main {
 
         System.out.println();
 
+        room.checkIn();
+        room.checkOut();
+        room.cleanRoom();
+
+        System.out.println("Room Available: " + room.isAvailable());
+
         // Testing Reservation
         Reservation reservation = new Reservation("king", 3, true);
 
@@ -26,6 +32,7 @@ public class Main {
 
         System.out.println();
 
+
         // Employees testing
 
         Employee employee = new Employee(67, "Michael Trevino",
@@ -33,11 +40,21 @@ public class Main {
         // Day 1
 //        employee.punchTimeCard(8);
 //        employee.punchTimeCard(20); // 12 hours
-
+        employee.punchIn(8);
+        employee.punchOut(20);
         //Day 2
 //        employee.punchTimeCard(8);
 //        employee.punchTimeCard(20); // 12 hours
+        employee.punchIn(8);
+        employee.punchOut(20);
 
+        //Day 3
+        employee.punchIn(8);
+        employee.punchOut(24);
+
+        //Day 4
+        employee.punchIn(8);
+        employee.punchOut(24);
 
 
         System.out.println("\n=== Employee ===");
@@ -47,5 +64,12 @@ public class Main {
         System.out.println("Regular Hours: " + employee.getHoursWorked());
         System.out.println("Overtime: " + employee.getOvertimeHours());
         System.out.println("Total Pay: $" + employee.getTotalPay());
+
+        Hotel hotel = new Hotel("Fat Cat Hotel", 15, 50);
+        hotel.bookRoom(3, true);
+        hotel.bookRoom(20,false);
+        System.out.println("\n=== Fat Cat Hotel ===");
+        System.out.println("Available Suites: " + hotel.getAvailableSuites());
+        System.out.println("Available Rooms: " + hotel.getAvailableRooms());
     }
 }
