@@ -44,8 +44,11 @@ public class Room {
     }
     public void checkOut() {
         occupied = false;
+
     }
     public void cleanRoom() {
-        dirty = false;
+        if (!occupied) {
+            dirty = false;
+        }
     }
 }
